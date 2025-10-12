@@ -13,6 +13,24 @@ void insertAtBeginning(struct Node** head, int id, char name[], int stock) {
     *head = newNode;             // Nuevo nodo se convierte en la cabeza
 }
 
+// Inserta un nuevo producto al final de la lista
+void insertAtEnd(struct Node** head, int id, char name[], int stock) {
+    struct Node* newNode = malloc(sizeof(struct Node));
+    newNode->id = id;
+    strcpy(newNode->name, name);
+    newNode->stock = stock;
+    newNode->next = NULL;        // Será el último nodo
+
+    if (*head == NULL) {
+        *head = newNode;         // Si la lista está vacía, se convierte en cabeza
+    } else {
+        struct Node* temp = *head;
+        while (temp->next != NULL) // Recorre hasta el último nodo
+            temp = temp->next;
+        temp->next = newNode;    // Lo agrega al final
+    }
+}
+
 // Menú principal que permite al usuario interactuar con el inventario
 void menu() {
     struct Node* inventory = NULL; // Lista vacía al inicio

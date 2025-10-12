@@ -14,6 +14,9 @@ struct Node {
 // Inserta un producto al inicio de la lista
 void insertAtBeginning(struct Node** head, int id, char name[], int stock);
 
+// Inserta un producto al final de la lista
+void insertAtEnd(struct Node** head, int id, char name[], int stock);
+
 // Muestra el menú principal y gestiona las opciones
 void menu();
 
@@ -22,4 +25,6 @@ void menu();
 
 // Inserta un producto al inicio de la lista
 void insertAtBeginning(struct Node** head, int id, char name[], int stock);
+
+void insertAtEnd(struct Node** head, int id, char name[], int stock);
 
