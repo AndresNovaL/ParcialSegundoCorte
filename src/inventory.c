@@ -3,6 +3,16 @@
 #include <string.h>
 #include "inventory.h"
 
+// Inserta un nuevo producto al inicio de la lista
+void insertAtBeginning(struct Node** head, int id, char name[], int stock) {
+    struct Node* newNode = malloc(sizeof(struct Node)); // Reserva memoria
+    newNode->id = id;
+    strcpy(newNode->name, name); // Copia el nombre
+    newNode->stock = stock;
+    newNode->next = *head;       // Apunta al anterior primer nodo
+    *head = newNode;             // Nuevo nodo se convierte en la cabeza
+}
+
 // Menú principal que permite al usuario interactuar con el inventario
 void menu() {
     struct Node* inventory = NULL; // Lista vacía al inicio

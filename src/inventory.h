@@ -9,7 +9,17 @@ struct Node {
     struct Node* next;      // Apuntador al siguiente nodo (producto)
 };
 
+// Declaración de funciones que se implementan en inventory.c
+
+// Inserta un producto al inicio de la lista
+void insertAtBeginning(struct Node** head, int id, char name[], int stock);
+
 // Muestra el menú principal y gestiona las opciones
 void menu();
 
 #endif
+// Declaración de funciones que se implementan en inventory.c
+
+// Inserta un producto al inicio de la lista
+void insertAtBeginning(struct Node** head, int id, char name[], int stock);
+
