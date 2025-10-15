@@ -51,6 +51,29 @@ int updateStock(struct Node* head, int id, int newStock) {
     return 0;                    // Producto no encontrado
 }
 
+// Elimina un producto por ID
+int deleteById(struct Node** head, int id) {
+    struct Node* temp = *head;
+    struct Node* prev = NULL;
+
+    // Busca el nodo a eliminar
+    while (temp != NULL && temp->id != id) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if (temp == NULL) return 0;  // No encontrado
+
+    // Si es el primer nodo
+    if (prev == NULL)
+        *head = temp->next;
+    else
+        prev->next = temp->next;
+
+    free(temp);                  // Libera memoria
+    return 1;                    // Eliminación exitosa
+}
+
 // Menú principal que permite al usuario interactuar con el inventario
 void menu() {
     struct Node* inventory = NULL; // Lista vacía al inicio
