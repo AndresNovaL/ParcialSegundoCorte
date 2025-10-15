@@ -31,6 +31,16 @@ void insertAtEnd(struct Node** head, int id, char name[], int stock) {
     }
 }
 
+// Busca un producto por ID y retorna el nodo si lo encuentra
+struct Node* searchById(struct Node* head, int id) {
+    while (head != NULL) {
+        if (head->id == id)
+            return head;         // Producto encontrado
+        head = head->next;
+    }
+    return NULL;                 // No encontrado
+}
+
 // Menú principal que permite al usuario interactuar con el inventario
 void menu() {
     struct Node* inventory = NULL; // Lista vacía al inicio
