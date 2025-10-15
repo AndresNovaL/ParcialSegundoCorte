@@ -4,7 +4,7 @@
 // Estructura que representa un producto en el inventario
 struct Node {
     int id;                 // Identificador único del producto
-    char name[40];          // Nombre del producto (máximo 39 caracteres)
+    char name[40];          // Nombre del producto (máximo 39 caracteres + '\0')
     int stock;              // Cantidad disponible en inventario
     struct Node* next;      // Apuntador al siguiente nodo (producto)
 };
@@ -15,17 +15,6 @@ struct Node {
 void insertAtBeginning(struct Node** head, int id, char name[], int stock);
 
 // Inserta un producto al final de la lista
-void insertAtEnd(struct Node** head, int id, char name[], int stock);
-
-// Muestra el menú principal y gestiona las opciones
-void menu();
-
-#endif
-// Declaración de funciones que se implementan en inventory.c
-
-// Inserta un producto al inicio de la lista
-void insertAtBeginning(struct Node** head, int id, char name[], int stock);
-
 void insertAtEnd(struct Node** head, int id, char name[], int stock);
 
 // Busca un producto por su ID
