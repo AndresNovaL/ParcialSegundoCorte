@@ -41,6 +41,16 @@ struct Node* searchById(struct Node* head, int id) {
     return NULL;                 // No encontrado
 }
 
+// Actualiza el stock de un producto por ID
+int updateStock(struct Node* head, int id, int newStock) {
+    struct Node* product = searchById(head, id);
+    if (product != NULL) {
+        product->stock = newStock;
+        return 1;                // Actualización exitosa
+    }
+    return 0;                    // Producto no encontrado
+}
+
 // Menú principal que permite al usuario interactuar con el inventario
 void menu() {
     struct Node* inventory = NULL; // Lista vacía al inicio
