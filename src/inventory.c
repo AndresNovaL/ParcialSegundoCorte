@@ -74,6 +74,15 @@ int deleteById(struct Node** head, int id) {
     return 1;                    // Eliminación exitosa
 }
 
+// Muestra todos los productos del inventario
+void listInventory(struct Node* head) {
+    printf("\nInventario:\n");
+    while (head != NULL) {
+        printf("ID: %d | Nombre: %s | Stock: %d\n", head->id, head->name, head->stock);
+        head = head->next;
+    }
+}
+
 // Menú principal que permite al usuario interactuar con el inventario
 void menu() {
     struct Node* inventory = NULL; // Lista vacía al inicio
